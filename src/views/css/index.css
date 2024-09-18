@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+/*topo*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo do header */
+/* Estilos para o header */
+header {
+  display: flex;
+  justify-content: space-between; /* Espaço entre logo e menu */
+  align-items: center; /* Alinhamento vertical */
+  padding: 10px 20px; /* Ajuste o padding conforme necessário */
+  background-color: #F5F5EF; /* Defina a cor de fundo se necessário */
+  position: relative; /* Para o posicionamento absoluto do ícone do menu */
+}
+
+.logo {
+  width: 100px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto;
+}
+
+.menu-toggle {
+  display: none; /* Inicialmente oculto em telas grandes */
+  flex-direction: column; /* Alinha as barras verticalmente */
+  cursor: pointer;
+  z-index: 1001; /* Garantir que o ícone esteja sobre outros elementos */
+}
+
+.menu-toggle .bar {
+  width: 25px; /* Ajuste a largura das barras */
+  height: 3px; /* Ajuste a altura das barras */
+  background-color: #333; /* Cor das barras */
+  margin: 3px 0; /* Espaço entre as barras */
+}
+
+/* Estilos para o menu de navegação */
+.navigation {
+  display: flex; /* Exibe o menu em linha */
+}
+
+.navigation ul {
+  display: flex; /* Alinha os itens do menu horizontalmente */
+  list-style: none; /* Remove marcadores da lista */
+  margin: 0;
+  padding: 0;
+}
+
+.navigation li {
+  margin: 0 10px; /* Espaço entre os itens do menu */
+}
+
+/* Media query para telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Exibe o ícone do menu em telas pequenas */
+  }
+
+  .navigation {
+    display: none; /* Oculta o menu de navegação em telas pequenas */
+    position: absolute;
+    top: 60px; /* Ajuste conforme necessário */
+    right: 10px; /* Ajuste conforme necessário */
+    background-color: #fff; /* Cor de fundo do menu */
+    width: 200px; /* Largura do menu, ajuste conforme necessário */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra do menu */
+    flex-direction: column; /* Alinha os itens do menu verticalmente */
+  }
+
+  .navigation.active {
+    display: flex; /* Exibe o menu quando está ativo */
+  }
+
+  .navigation ul {
+    display: block; /* Exibe a lista de itens verticalmente */
+  }
+
+  .navigation li {
+    margin: 10px 0; /* Espaço entre os itens do menu */
+    text-align: center; /* Centraliza o texto */
+  }
+}
+
+
+
+  /*carrossel css */
+
+  .botoes {
+  
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    height: 15px;
+    cursor: pointer;
+  }
+  
+  #passar_button{
+    width: 30px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid rgb(245, 245, 245);
+  }
+  
+  .botao-menu{
+  
+    text-decoration: none;
+    color: #4267A6;
+    padding: 8px 12px;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .botao-menu:hover{
+  background-color: #4267A6;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  
+  
+  .carrossel{
+  width: 100%;
+  margin-top: 20px;
+  
+  }
+
+  
+  @media (max-width: 480px) {
+    .carrossel {
+      display:none;
+    }
+  }
+  
+/* destaques */
+.card1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center; /* Alinha o conteúdo ao centro */
+}
+
+/* Efeito de hover para imagens */
+.card1 img:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Estilo para os itens dentro do card */
+.cardHome {
+  display: flex;
+  flex-direction: column; /* Alinha o conteúdo dentro do item em uma coluna */
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  align-items: center; /* Centraliza o conteúdo dentro de cada item */
+  margin: 10px; /* Adiciona algum espaçamento ao redor dos itens */
+}
+
+/* Estilo das imagens dentro dos itens */
+.card1 img {
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 200px; /* Largura padrão para imagens */
+  margin: 20px; /* Margem ao redor das imagens */
+  border-radius: 50%; /* Imagens circulares */
+}
+
+/* Estilos para telas menores */
+@media (max-width: 1024px) {
+  .card1 img {
+    width: 150px; /* Largura reduzida para telas médias */
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card1 img {
+    width: 100px; /* Largura reduzida ainda mais para telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  .card1 {
+    align-items: center; /* Centraliza os itens dentro do contêiner */
+  }
+
+  .cardHome span {
+    text-decoration: underline 3px solid #4267A6;
+    font-size: medium;
+  }
+}
+
+
+  /* galeria */
+
+  /* Container que centraliza o conteúdo */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px; /* Adiciona um pouco de padding para a responsividade */
+}
+
+/* Card que contém os produtos */
+.card {
+  width: 100%;
+  max-width: 1200px; /* Ajuste conforme necessário */
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Estilo básico para a descrição do produto */
+.descricao {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px; /* Ajustado para uma leitura mais confortável em telas menores */
+  margin-bottom: 5px;
+  margin-top: -5px;
+}
+
+/* Estilo para o botão de adicionar ao carrinho */
+.button-add button {
+  width: 100%;
+  background-color: #e8f0ff;
+  border: 0px;
+  padding: 10px;
+  font-size: small;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-add button:hover {
+  background-color: #4267a68e;
+}
+
+/* Estilo para as imagens dos produtos */
+.roupas img {
+  max-width: 100%; /* Mantém a imagem responsiva dentro do contêiner */
+
+}
+
+#preco {
+  font-weight: bold;
+  
+}
+/* Estilo para cada item de produto */
+.roupa {
+  flex: 1 1 calc(25% - 20px); /* Ajusta o item para ocupar 25% da largura, com espaçamento */
+  max-width: calc(25% - 20px); /* Garante que a largura máxima do item não ultrapasse 25% */
+  box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+  margin-bottom: 20px; /* Espaçamento inferior entre os itens */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .roupa {
+    flex: 1 1 calc(33.333% - 20px); /* Ajuste para 3 itens por linha */
+    max-width: calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .roupa {
+    flex: 1 1 calc(50% - 20px); /* Ajuste para 2 itens por linha */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .roupa {
+    flex: 1 1 100%; /* Ajuste para 1 item por linha */
+    max-width: 90%;
+    margin: 5px auto;
+  }
+}
+
+  /* rodapé */
+
+.rodape {
+  background-color: #F5F5EF;
+  padding: 40px 0;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .rodape h1{
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .secao_icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .icon {
+    margin: 0 10px;
+  }
+  
+  .botao_redessociais img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  
+  }
+  
+  
+  .botao_redessociais img:hover {
+    transform: scale(1.1);
+  }
+  
+  .endereco {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .localizacao, .horario {
+    padding: 5px;
+  }
+  .copy{
+  display: flex;
+  justify-content: center;
+  
+  }
+  
+  .copy p{
+    margin: 20px;
+  }
+
+  /*formulario*/
+
+
+.container_form {
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+  padding-bottom: 10%;
+  
+}
+
+.formulario {
+ padding: 5vh;
+  background-color: white;
+  width: 400px;
+  height: auto;
+  font-family: "lato", serif;
+  border: 1px solid #4267A6;
+  border-radius: 5px;
+  box-shadow: 4px 4px 25px 1px rgb(123, 117, 117);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button_login, .input_login{
+  width: 100%;
+}
+
+input, .input_login{
+  margin: 10px;
+  padding: 15px;
+}
+
+.button_login {
+  padding: 15px;
+  border-radius: 15px;
+  font-size: larger;
+  background-color: #4267A6;
+  color: whitesmoke;
+  margin-top: 3vh;
+  border: 0;
+  height: 60px;
+}
+
+.link_cadastro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4267A6;
+
+}
+.link_cadastro button{
+border: 0;
+color: blue;
+}
+
+@media (max-width: 480px) {
+  .formulario {
+    width: 260px;
+  }
+}
+
+.sobre_site {
+display: flex;
+padding: 30px;
+width: 750px;
+font-family: 'Lato', sans-serif;
+margin: auto;
+
+}
+
+.div_sobre {
+ 
+  margin: auto;
+}
+
+.div_sobre h1 {
+ font-size: 40px;
+ text-decoration: underline solid #4267A6;
+
+}
+.div_sobre p {
+  font-size: 20px;
+  font-weight: bold;
+ }
+
+.imagem_sobre {
+display: flex;
+width: 400px;
+height: 400px;
+}
+
+@media (max-width: 480px) {
+  .imagem_sobre {
+   display: none;
+  }
+
+  .sobre_site {
+    width: 250px;
+   height: 500px;
+  }
+
+  .div_sobre p{
+    font-size: 15px;
+  }
+  .div_sobre h1{
+    font-size: 30px;
+  }
+
+}
+
+.carrinho {
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.vazio {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.carrinho-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.carrinho-item-imagem {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.carrinho-item-info {
+  flex: 1;
+}
+
+.carrinho-item-nome {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.carrinho-item-descricao {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.carrinho-item-preco {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 5px;
+}
+
+.carrinho-item-quantidade {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantidade-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.carrinho-resumo {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: right;
+}
+
+.carrinho-resumo h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.carrinho-total {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin: 10px 0;
+}
+
+.carrinho-finalizar {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carrinho-finalizar:hover {
+  background-color: #0056b3;
+}
