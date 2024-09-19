@@ -127,17 +127,18 @@ header {
   
   .carrossel{
   width: 100%;
-  margin-top: 20px;
+  margin-top: 5px;
   
   }
 
   
-  @media (max-width: 480px) {
+  /*@media (max-width: 480px) {
     .carrossel {
       display:none;
     }
   }
-  
+  */
+
 /* destaques */
 .card1 {
   display: flex;
@@ -178,7 +179,6 @@ header {
 @media (max-width: 1024px) {
   .card1 img {
     width: 150px; /* Largura reduzida para telas médias */
-    display: none;
   }
 }
 
@@ -186,23 +186,32 @@ header {
   .card1 img {
     width: 100px; /* Largura reduzida ainda mais para telas pequenas */
   }
+
+  .cardHome {
+    font-size: 15px; /* Ajuste de tamanho da fonte */
+  }
 }
 
 @media (max-width: 480px) {
   .card1 {
-    align-items: center; /* Centraliza os itens dentro do contêiner */
+    width: 100%; /* Largura total para garantir que o layout se adapte ao celular */
+    flex-direction: row; /* Alinha os itens verticalmente */
   }
 
   .cardHome span {
-    text-decoration: underline 3px solid #4267A6;
-    font-size: medium;
+    
+    font-size: small;
+  }
+
+  .card1 img {
+    width: 60px; /* Largura reduzida ainda mais para telas pequenas */
+    margin: 5px;
   }
 }
 
+/* galeria */
 
-  /* galeria */
-
-  /* Container que centraliza o conteúdo */
+/* Container que centraliza o conteúdo */
 .container {
   display: flex;
   justify-content: center;
@@ -217,6 +226,8 @@ header {
   display: flex;
   flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
   gap: 20px; /* Espaçamento entre os itens */
+  margin: 2px;
+
 }
 
 /* Estilo básico para a descrição do produto */
@@ -230,13 +241,13 @@ header {
 /* Estilo para o botão de adicionar ao carrinho */
 .button-add button {
   width: 100%;
-  background-color: #e8f0ff;
+  background-color: #eeeff1;
   border: 0px;
-  padding: 10px;
   font-size: small;
   color: rgb(0, 0, 0);
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s; /* Efeito de transição suave */
 }
 
 .button-add button:hover {
@@ -246,19 +257,31 @@ header {
 /* Estilo para as imagens dos produtos */
 .roupas img {
   max-width: 100%; /* Mantém a imagem responsiva dentro do contêiner */
-
+  border-radius: 5px; /* Bordas arredondadas para um visual mais suave */
+  padding: 1px;
 }
 
+/* Estilo do preço */
 #preco {
   font-weight: bold;
-  
+  color: #333; /* Cor mais escura para melhor legibilidade */
 }
+
 /* Estilo para cada item de produto */
 .roupa {
   flex: 1 1 calc(25% - 20px); /* Ajusta o item para ocupar 25% da largura, com espaçamento */
   max-width: calc(25% - 20px); /* Garante que a largura máxima do item não ultrapasse 25% */
   box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
   margin-bottom: 20px; /* Espaçamento inferior entre os itens */
+  transition: transform 0.3s; /* Efeito de transição suave ao passar o mouse */
+  border: 1px solid rgba(231, 230, 230, 0.568);
+  border-radius: 5px;
+  
+}
+
+/* Efeito de hover para os itens */
+.roupa:hover {
+  transform: scale(1.02); /* Aumenta levemente o item ao passar o mouse */
 }
 
 /* Responsividade para telas menores */
@@ -278,9 +301,18 @@ header {
 
 @media (max-width: 480px) {
   .roupa {
-    flex: 1 1 100%; /* Ajuste para 1 item por linha */
-    max-width: 90%;
-    margin: 5px auto;
+    flex: 1 1 calc(50% - 20px); /* Ajuste para 2 itens por linha */
+    max-width: calc(50% - 20px);
+    margin: 5px; /* Espaçamento melhorado para centralizar */
+  }
+
+  .descricao {
+    font-size: 14px; /* Ajuste de fonte para melhor legibilidade */
+  }
+
+  .button-add button {
+    font-size: medium; /* Aumenta o tamanho do texto do botão */
+    padding: 12px; /* Aumenta o padding do botão para um clique mais fácil */
   }
 }
 
