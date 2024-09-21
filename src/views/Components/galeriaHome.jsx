@@ -1,39 +1,15 @@
-import React, { useState } from 'react'; //Importar useState
+import React, { useState } from 'react';
 import Item from './item';
-import { FaPlus } from 'react-icons/fa'; //Importar FaPlus
+import { FaPlus } from 'react-icons/fa';
 
-function Galeria() {
-  const [successMessage, setSuccessMessage] = useState(null); // Estado para mensagem de sucesso
+function Galeria({ setCarrinho }) {
+  const [successMessage, setSuccessMessage] = useState(null);
 
-  const adicionarAoCarrinho = async (produto) => {
-    try {
-      const response = await fetch('http://localhost:3000/compras', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          nome: produto.altText,
-          descricao: produto.descricao,
-          preco: produto.preco,
-          imagem_url: produto.imageUrl
-        }),
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text(); // Obtém o texto da resposta do erro
-        throw new Error(`Erro na resposta do servidor: ${response.status} - ${errorText}`);
-      }
-
-      const data = await response.json();
-      console.log('Resposta do servidor:', data);
-      setSuccessMessage(produto.id); // Atualiza o estado com o ID do produto adicionado
-    } catch (error) {
-      console.error('Erro ao adicionar ao carrinho:', error);
-    }
+  const adicionarAoCarrinho = (produto) => {
+    setCarrinho((prevCarrinho) => [...prevCarrinho, produto]);
+    setSuccessMessage(produto.id);
   };
 
-  // Simulando uma lista de produtos
   const produtos = [
     { id: 1, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$20,00' },
     { id: 2, link: '#', imageUrl: 'pulseira3.jpg', altText: 'Energia Zen', descricao: 'Pulseira infantil colorida', preco: 'R$10,00' },
@@ -48,35 +24,32 @@ function Galeria() {
     { id: 11, link: '#', imageUrl: 'pulseiraFeminina.jpg', altText: 'Energia Zen', descricao: '5 Pulseiras com Pingentes dourados', preco: 'R$10,00' },
     { id: 12, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' }
   ];
-
-  
-
   return (
     <section>
       <div className="container">
         <div className="card">
-              {produtos.map((produto) => (
-                <div className="roupa" key={produto.id}>
-                  <Item
-                    link={produto.link}
-                    imageUrl={produto.imageUrl}
-                    altText={produto.altText}
-                    className="roupas"
-                    titleClassName="titulo-roupa"
-                  />
-                  <div className="descricao">
-                    <span>{produto.descricao}</span>
-                    <br />
-                    <span id="preco">{produto.preco}</span>
-                  </div>
-                  <div className="button-add">
-                    <button onClick={() => adicionarAoCarrinho(produto)}>
-                      <FaPlus />
-                      {successMessage === produto.id ? ' Adicionado com sucesso' : ' Adicionar ao carrinho'}
-                    </button>
-                  </div>
-                </div>
-              ))}
+          {produtos.map((produto) => (
+            <div className="roupa" key={produto.id}>
+              <Item
+                link={produto.link}
+                imageUrl={produto.imageUrl}
+                altText={produto.altText}
+                className="roupas"
+                titleClassName="titulo-roupa"
+              />
+              <div className="descricao">
+                <span>{produto.descricao}</span>
+                <br />
+                <span id="preco">{produto.preco}</span>
+              </div>
+              <div className="button-add">
+                <button onClick={() => adicionarAoCarrinho(produto)}>
+                  <FaPlus />
+                  {successMessage === produto.id ? ' Adicionado com sucesso' : ' Adicionar ao carrinho'}
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

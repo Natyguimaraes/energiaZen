@@ -3,11 +3,13 @@ import Home from './home';
 import LoginPage from './login';
 import Sobre from './sobre';
 import Carrinho from './carrinho';
+import Galeria from './galeriaHome'; 
 import '../css/index.css'; 
 
 const Topo = () => {
   const [secaoAtual, setSecaoAtual] = useState('home');
   const [menuAberto, setMenuAberto] = useState(false);
+  const [carrinho, setCarrinho] = useState([]); // Estado do carrinho
 
   const cliqueSecao = (secao) => {
     setSecaoAtual(secao);
@@ -17,34 +19,34 @@ const Topo = () => {
   return (
     <>
       <header>
-  <img src="logo.png" alt="logo da Energia Zen" className="logo" />
+        <img src="logo.png" alt="logo da Energia Zen" className="logo" />
 
-  <div 
-    className="menu-toggle" 
-    id="menu-toggle" 
-    onClick={() => setMenuAberto(!menuAberto)}
-    aria-expanded={menuAberto}
-    aria-controls="navigation"
-  >
-    <span className="bar"></span>
-    <span className="bar"></span>
-    <span className="bar"></span>
-  </div>
-  
-  <nav className={`navigation ${menuAberto ? 'active' : ''}`} id="navigation">
-    <ul>
-      <li onClick={() => cliqueSecao('home')} className='botao-menu'> HOME </li>
-      <li onClick={() => cliqueSecao('login')} className='botao-menu'> LOGIN </li>
-      <li onClick={() => cliqueSecao('sobre')} className='botao-menu'> SOBRE </li>
-      <li onClick={() => cliqueSecao('carrinho')} className='botao-menu'> CARRINHO </li>
-    </ul>
-  </nav>
-</header>
+        <div 
+          className="menu-toggle" 
+          id="menu-toggle" 
+          onClick={() => setMenuAberto(!menuAberto)}
+          aria-expanded={menuAberto}
+          aria-controls="navigation"
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+        
+        <nav className={`navigation ${menuAberto ? 'active' : ''}`} id="navigation">
+          <ul>
+            <li onClick={() => cliqueSecao('home')} className='botao-menu'> HOME </li>
+            <li onClick={() => cliqueSecao('login')} className='botao-menu'> LOGIN </li>
+            <li onClick={() => cliqueSecao('sobre')} className='botao-menu'> SOBRE </li>
+            <li onClick={() => cliqueSecao('carrinho')} className='botao-menu'> CARRINHO </li>
+          </ul>
+        </nav>
+      </header>
 
       <div>
         {secaoAtual === 'home' && (
           <div className='secao'>
-            <Home />
+            <Galeria setCarrinho={setCarrinho} />
           </div>
         )}
 
@@ -62,7 +64,7 @@ const Topo = () => {
 
         {secaoAtual === 'carrinho' && (
           <div className='secao'>
-            <Carrinho />
+            <Carrinho compras={carrinho} setCarrinho={setCarrinho} />
           </div>
         )}
       </div>
@@ -71,4 +73,5 @@ const Topo = () => {
 }
 
 export default Topo;
+
 

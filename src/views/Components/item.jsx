@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../css/index.css';
 
 function Item({ link, imageUrl, altText, className, title, titleClassName }) {
@@ -12,4 +11,6 @@ function Item({ link, imageUrl, altText, className, title, titleClassName }) {
     </div>
   );
 }
+
 export default Item;
+
