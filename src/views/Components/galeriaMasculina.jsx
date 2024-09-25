@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; // Corrigido: Importar useState
 import Item from './item';
-import { FaPlus } from 'react-icons/fa'; // Corrigido: Importar FaPlus
+import { CiShoppingCart } from "react-icons/ci";
 
 function GaleriaMasc() {
   const [successMessage, setSuccessMessage] = useState(null); // Estado para mensagem de sucesso
@@ -76,7 +76,7 @@ function GaleriaMasc() {
                 </div>
                 <div className="button-add">
                   <button onClick={() => adicionarAoCarrinho(produto)}>
-                    <FaPlus />
+                  <CiShoppingCart />
                     {successMessage === produto.id ? ' Adicionado com sucesso' : ' Adicionar ao carrinho'}
                   </button>
                 </div>

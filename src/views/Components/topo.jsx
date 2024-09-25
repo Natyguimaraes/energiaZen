@@ -3,7 +3,6 @@ import Home from './home';
 import LoginPage from './login';
 import Sobre from './sobre';
 import Carrinho from './carrinho';
-import Galeria from './galeriaHome'; 
 import '../css/index.css'; 
 
 const Topo = () => {
@@ -46,7 +45,7 @@ const Topo = () => {
       <div>
         {secaoAtual === 'home' && (
           <div className='secao'>
-            <Galeria setCarrinho={setCarrinho} />
+            <Home setCarrinho={setCarrinho} />
           </div>
         )}
 

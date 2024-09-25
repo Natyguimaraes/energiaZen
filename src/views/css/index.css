@@ -225,9 +225,7 @@ header {
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte */
-  gap: 20px; /* Espaçamento entre os itens */
-  margin: 2px;
-
+  justify-content: center;
 }
 
 /* Estilo básico para a descrição do produto */
@@ -236,10 +234,12 @@ header {
   font-size: 16px; /* Ajustado para uma leitura mais confortável em telas menores */
   margin-bottom: 5px;
   margin-top: -5px;
+  padding: 5px;
 }
 
 /* Estilo para o botão de adicionar ao carrinho */
 .button-add button {
+  padding: 5px;
   width: 100%;
   height: 50px;
   background-color: #eeeff1;
@@ -270,10 +270,10 @@ header {
 
 /* Estilo para cada item de produto */
 .roupa {
-  flex: 1 1 calc(25% - 20px); /* Ajusta o item para ocupar 25% da largura, com espaçamento */
-  max-width: calc(25% - 20px); /* Garante que a largura máxima do item não ultrapasse 25% */
+  flex: 1 1 calc(20% - 2px); /* Ajusta o item para ocupar 25% da largura, com espaçamento */
+  max-width: calc(25% - 2px); /* Garante que a largura máxima do item não ultrapasse 25% */
   box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
-  margin-bottom: 20px; /* Espaçamento inferior entre os itens */
+  margin-bottom: 15px; /* Espaçamento inferior entre os itens */
   transition: transform 0.3s; /* Efeito de transição suave ao passar o mouse */
   border: 1px solid rgba(231, 230, 230, 0.568);
   border-radius: 5px;
@@ -651,3 +651,10 @@ h2 {
   display: flex;
   align-items: center;
 }
+
+
+svg {
+  width: 2rem;
+  height: 1.5rem;
+}
+

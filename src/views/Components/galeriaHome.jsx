@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Item from './item';
-import { FaPlus } from 'react-icons/fa';
+import { CiShoppingCart } from "react-icons/ci";
+
 
 function Galeria({ setCarrinho }) {
   const [successMessage, setSuccessMessage] = useState(null);
@@ -25,6 +26,11 @@ function Galeria({ setCarrinho }) {
     { id: 12, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' }
   ];
   return (
+
+    <>
+    <div className="titulo">
+    
+    </div>
     <section>
       <div className="container">
         <div className="card">
@@ -35,8 +41,7 @@ function Galeria({ setCarrinho }) {
                 imageUrl={produto.imageUrl}
                 altText={produto.altText}
                 className="roupas"
-                titleClassName="titulo-roupa"
-              />
+                titleClassName="titulo-roupa" />
               <div className="descricao">
                 <span>{produto.descricao}</span>
                 <br />
@@ -44,7 +49,7 @@ function Galeria({ setCarrinho }) {
               </div>
               <div className="button-add">
                 <button onClick={() => adicionarAoCarrinho(produto)}>
-                  <FaPlus />
+                  <CiShoppingCart />
                   {successMessage === produto.id ? ' Adicionado com sucesso' : ' Adicionar ao carrinho'}
                 </button>
               </div>
@@ -52,7 +57,7 @@ function Galeria({ setCarrinho }) {
           ))}
         </div>
       </div>
-    </section>
+    </section></>
   );
 }
 
