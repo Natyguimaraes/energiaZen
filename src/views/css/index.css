@@ -307,7 +307,7 @@ header {
     flex: 1 1 calc(49% - 5px); /* Ajuste para 2 itens por linha */
     max-width: calc(45% - 5px);
     margin: 2%; /* Espaçamento melhorado para centralizar */
-    border: 1px solid rgba(250, 143, 143, 0.219);
+    border: 1px solid #77777725;
     border-radius: 0%;
     padding: 0%;
   }
