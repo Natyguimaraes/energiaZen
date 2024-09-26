@@ -2,10 +2,12 @@ import React, { useState } from 'react'; // Corrigido: Importar useState
 import Item from './item';
 import { CiShoppingCart } from "react-icons/ci";
 
-function GaleriaFem() {
+function GaleriaFem({setCarrinho}) {
   
   const [successMessage, setSuccessMessage] = useState(null);
   const [visibleCount, setVisibleCount] = useState(12);
+
+
 
   const adicionarAoCarrinho = (produto) => {
     setCarrinho((prevCarrinho) => [...prevCarrinho, produto]);

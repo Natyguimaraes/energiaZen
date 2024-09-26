@@ -2,11 +2,13 @@ import React, { useState } from 'react'; // Corrigido: Importar useState
 import Item from './item';
 import { CiShoppingCart } from "react-icons/ci";
 
-function GaleriaMasc() {
-  const [successMessage, setSuccessMessage] = useState(null); // Estado para mensagem de sucesso
+function GaleriaMasc({setCarrinho}) {
+  const [successMessage, setSuccessMessage] = useState(null);
   const [visibleCount, setVisibleCount] = useState(12);
 
-   const adicionarAoCarrinho = (produto) => {
+
+
+  const adicionarAoCarrinho = (produto) => {
     setCarrinho((prevCarrinho) => [...prevCarrinho, produto]);
     setSuccessMessage(produto.id);
   };
@@ -41,46 +43,44 @@ function GaleriaMasc() {
   const mostrarMais = () => {
     setVisibleCount((prevCount) => prevCount + 4); // Aumenta a contagem de produtos visíveis
   };
-  
 
   return (
     <section>
-    <div className="container">
-      <div className="card">
-        {produtos.slice(0, visibleCount).map((produto) => (
-          <div className="roupa" key={produto.id}>
-            <Item
-              link={produto.link}
-              imageUrl={produto.imageUrl}
-              altText={produto.altText}
-              className="roupas"
-              titleClassName="titulo-roupa"
-            />
-            <div className="descricao">
-              <span>{produto.descricao}</span>
-              <br />
-              <span id="preco">{produto.preco}</span>
+      <div className="container">
+        <div className="card">
+          {produtos.slice(0, visibleCount).map((produto) => (
+            <div className="roupa" key={produto.id}>
+              <Item
+                link={produto.link}
+                imageUrl={produto.imageUrl}
+                altText={produto.altText}
+                className="roupas"
+                titleClassName="titulo-roupa"
+              />
+              <div className="descricao">
+                <span>{produto.descricao}</span>
+                <br />
+                <span id="preco">{produto.preco}</span>
+              </div>
+              <div className="button-add">
+                <button onClick={() => adicionarAoCarrinho(produto)}>
+                  <CiShoppingCart />
+                  {successMessage === produto.id ? ' Adicionado com sucesso' : ' Adicionar ao carrinho'}
+                </button>
+              </div>
             </div>
-            <div className="button-add">
-              <button onClick={() => adicionarAoCarrinho(produto)}>
-                <CiShoppingCart />
-                {successMessage === produto.id ? ' Adicionado com sucesso' : ' Adicionar ao carrinho'}
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      
       </div>
+
+      {visibleCount < produtos.length && (
+          <button className="ver_mais" onClick={mostrarMais}>Ver Mais</button>
+        )}
+    </section>
+
     
-    </div>
-
-    {visibleCount < produtos.length && (
-        <button className="ver_mais" onClick={mostrarMais}>Ver Mais</button>
-      )}
-  </section>
-
-  
-);
+  );
 }
-
 
 export default GaleriaMasc;
