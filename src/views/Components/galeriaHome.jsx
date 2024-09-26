@@ -5,7 +5,7 @@ import { CiShoppingCart } from "react-icons/ci";
 
 function Galeria({ setCarrinho }) {
   const [successMessage, setSuccessMessage] = useState(null);
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [visibleCount, setVisibleCount] = useState(12);
 
 
 
@@ -26,7 +26,19 @@ function Galeria({ setCarrinho }) {
     { id: 9, link: '#', imageUrl: 'pulseira3.jpg', altText: 'Energia Zen', descricao: 'Pulseira infantil colorida', preco: 'R$10,00' },
     { id: 10, link: '#', imageUrl: 'img2.jpeg', altText: 'Energia Zen', descricao: 'Pulseira 1 linha coração', preco: 'R$10,00' },
     { id: 11, link: '#', imageUrl: 'pulseiraFeminina.jpg', altText: 'Energia Zen', descricao: '5 Pulseiras com Pingentes dourados', preco: 'R$10,00' },
-    { id: 12, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' }
+    { id: 12, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' },
+    { id: 13, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$20,00' },
+    { id: 14, link: '#', imageUrl: 'pulseira3.jpg', altText: 'Energia Zen', descricao: 'Pulseira infantil colorida', preco: 'R$10,00' },
+    { id: 15, link: '#', imageUrl: 'pulseiraFeminina.jpg', altText: 'Energia Zen', descricao: '5 Pulseiras com Pingentes dourados', preco: 'R$20,00' },
+    { id: 16, link: '#', imageUrl: 'img2.jpeg', altText: 'Energia Zen', descricao: 'Pulseira 1 linha coração', preco: 'R$10,00' },
+    { id: 17, link: '#', imageUrl: 'img2.jpeg', altText: 'Energia Zen', descricao: 'Pulseira 1 linha coração', preco: 'R$18,00' },
+    { id: 18, link: '#', imageUrl: 'pulseiraFeminina.jpg', altText: 'Energia Zen', descricao: '5 Pulseiras com Pingentes dourados', preco: 'R$10,00' },
+    { id: 19, link: '#', imageUrl: 'pulseira3.jpg', altText: 'Energia Zen', descricao: '5 Pulseiras com Pingentes dourados', preco: 'R$10,00' },
+    { id: 20, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' },
+    { id: 21, link: '#', imageUrl: 'pulseira3.jpg', altText: 'Energia Zen', descricao: 'Pulseira infantil colorida', preco: 'R$10,00' },
+    { id: 23, link: '#', imageUrl: 'img2.jpeg', altText: 'Energia Zen', descricao: 'Pulseira 1 linha coração', preco: 'R$10,00' },
+    { id: 24, link: '#', imageUrl: 'pulseiraFeminina.jpg', altText: 'Energia Zen', descricao: '5 Pulseiras com Pingentes dourados', preco: 'R$10,00' },
+    { id: 25, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' }
   ];
   
   const mostrarMais = () => {

@@ -5,8 +5,8 @@ import { CiShoppingCart } from "react-icons/ci";
 function GaleriaFem() {
   
   const [successMessage, setSuccessMessage] = useState(null);
-  const [visibleCount, setVisibleCount] = useState(6);
-  
+  const [visibleCount, setVisibleCount] = useState(12);
+
   const adicionarAoCarrinho = (produto) => {
     setCarrinho((prevCarrinho) => [...prevCarrinho, produto]);
     setSuccessMessage(produto.id);
@@ -24,7 +24,20 @@ function GaleriaFem() {
     { id: 9, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
     { id: 10, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
     { id: 11, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
-    { id: 12, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' }
+    { id: 12, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 13, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$5,00' },
+    { id: 14, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 15, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$20,00' },
+    { id: 16, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 17, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$18,00' },
+    { id: 18, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 19, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 20, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 21, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 22, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 23, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' },
+    { id: 24, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$10,00' }
+
   ];
 
   const mostrarMais = () => {
