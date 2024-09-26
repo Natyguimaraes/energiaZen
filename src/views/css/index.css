@@ -302,9 +302,17 @@ header {
 
 @media (max-width: 480px) {
   .roupa {
-    flex: 1 1 calc(50% - 20px); /* Ajuste para 2 itens por linha */
-    max-width: calc(50% - 20px);
-    margin: 5px; /* Espaçamento melhorado para centralizar */
+    flex: 1 1 calc(40% - 5px); /* Ajuste para 2 itens por linha */
+    max-width: calc(40% - 5px);
+    margin: 2%; /* Espaçamento melhorado para centralizar */
+    border: 1px solid rgba(104, 104, 104, 0.219);
+    border-radius: 0%;
+    padding: 0%;
+  }
+
+  .roupas img {
+    border-radius: 0%;
+    padding: 0%;
   }
 
   .descricao {
