@@ -12,6 +12,8 @@ function Carrinho({ compras, setCarrinho }) {
   };
 
   return (
+    <>
+    <h1 className="titulo-carrinho"> CARRINHO </h1>
     <section className="carrinho">
       <div className="container">
         {compras.length === 0 ? (
@@ -37,7 +39,7 @@ function Carrinho({ compras, setCarrinho }) {
           </div>
         )}
       </div>
-    </section>
+    </section></>
   );
 }
 

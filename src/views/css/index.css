@@ -504,7 +504,7 @@ height: 400px;
 
 .carrinho {
   padding: 20px;
-  background-color: #f4f4f4;
+  border-top: 2px solid #c9c9c9;
 }
 
 .container {
@@ -676,4 +676,11 @@ svg {
   border: 0;
   background-color: #eeeff1;
 
+}
+
+
+.titulo-carrinho {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  padding: 10px;
 }
