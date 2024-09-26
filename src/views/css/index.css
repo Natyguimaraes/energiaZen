@@ -235,6 +235,7 @@ header {
   margin-bottom: 5px;
   margin-top: -5px;
   padding: 5px;
+  color: #777;
 }
 
 /* Estilo para o botão de adicionar ao carrinho */
@@ -264,6 +265,7 @@ header {
 
 /* Estilo do preço */
 #preco {
+ 
   font-weight: bold;
   color: #333; /* Cor mais escura para melhor legibilidade */
 }
@@ -666,3 +668,12 @@ svg {
   height: 1.5rem;
 }
 
+.ver_mais {
+
+  margin: 15px auto;
+  display: flex;
+  padding: 10px;
+  border: 0;
+  background-color: #eeeff1;
+
+}

@@ -5,6 +5,9 @@ import { CiShoppingCart } from "react-icons/ci";
 
 function Galeria({ setCarrinho }) {
   const [successMessage, setSuccessMessage] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(6);
+
+
 
   const adicionarAoCarrinho = (produto) => {
     setCarrinho((prevCarrinho) => [...prevCarrinho, produto]);
@@ -25,11 +28,16 @@ function Galeria({ setCarrinho }) {
     { id: 11, link: '#', imageUrl: 'pulseiraFeminina.jpg', altText: 'Energia Zen', descricao: '5 Pulseiras com Pingentes dourados', preco: 'R$10,00' },
     { id: 12, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' }
   ];
+  
+  const mostrarMais = () => {
+    setVisibleCount((prevCount) => prevCount + 4); // Aumenta a contagem de produtos visíveis
+  };
+
   return (
     <section>
       <div className="container">
         <div className="card">
-          {produtos.map((produto) => (
+          {produtos.slice(0, visibleCount).map((produto) => (
             <div className="roupa" key={produto.id}>
               <Item
                 link={produto.link}
@@ -52,8 +60,15 @@ function Galeria({ setCarrinho }) {
             </div>
           ))}
         </div>
+      
       </div>
+
+      {visibleCount < produtos.length && (
+          <button className="ver_mais" onClick={mostrarMais}>Ver Mais</button>
+        )}
     </section>
+
+    
   );
 }
 
