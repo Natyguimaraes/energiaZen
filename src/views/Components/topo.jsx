@@ -19,7 +19,6 @@ const Topo = () => {
     <>
       <header>
         <img src="logo.png" alt="logo da Energia Zen" className="logo" />
-
         <div 
           className="menu-toggle" 
           id="menu-toggle" 
@@ -43,12 +42,13 @@ const Topo = () => {
       </header>
 
       <div>
-        {secaoAtual === 'home' && (
-          <div className='secao'>
-            <Home setCarrinho={setCarrinho} />
-          </div>
-        )}
+      {secaoAtual === 'home' && (
+    <div className='secao'>
+        <Home setCarrinho={setCarrinho} />
+    </div>
+)}
 
+    
         {secaoAtual === 'login' && (
           <div className='secao'>
             <LoginPage />
@@ -72,5 +72,3 @@ const Topo = () => {
 }
 
 export default Topo;
-
-

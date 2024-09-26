@@ -26,11 +26,6 @@ function Galeria({ setCarrinho }) {
     { id: 12, link: '#', imageUrl: 'img1.png', altText: 'Energia Zen', descricao: '6 Pulseiras de Bolinhas coloridas', preco: 'R$10,00' }
   ];
   return (
-
-    <>
-    <div className="titulo">
-    
-    </div>
     <section>
       <div className="container">
         <div className="card">
@@ -41,7 +36,8 @@ function Galeria({ setCarrinho }) {
                 imageUrl={produto.imageUrl}
                 altText={produto.altText}
                 className="roupas"
-                titleClassName="titulo-roupa" />
+                titleClassName="titulo-roupa"
+              />
               <div className="descricao">
                 <span>{produto.descricao}</span>
                 <br />
@@ -57,7 +53,7 @@ function Galeria({ setCarrinho }) {
           ))}
         </div>
       </div>
-    </section></>
+    </section>
   );
 }
 

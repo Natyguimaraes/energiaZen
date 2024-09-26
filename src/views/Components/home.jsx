@@ -3,20 +3,17 @@ import Carrossel from './carrossel';
 import Destaques from './destaques';
 
 
-
-function Home () {
-
-    return(
+function Home({ setCarrinho }) {
+    return (
         <>
-        <div className='App'>
-        <div className="carrossel">
-            <Carrossel />
-        </div>
-        <Destaques />
-        </div>
+            <div className='App'>
+                <div className="carrossel">
+                    <Carrossel />
+                </div>
+                <Destaques setCarrinho={setCarrinho} />
+            </div>
         </>
-        
     );
 }
 
-export default Home
+export default Home;

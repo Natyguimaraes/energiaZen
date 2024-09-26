@@ -3,36 +3,13 @@ import Item from './item';
 import { CiShoppingCart } from "react-icons/ci";
 
 function GaleriaFem() {
-  const [successMessage, setSuccessMessage] = useState(null); // Estado para mensagem de sucesso
+  
+  const [successMessage, setSuccessMessage] = useState(null);
 
-  const adicionarAoCarrinho = async (produto) => {
-    try {
-      const response = await fetch('http://localhost:3000/compras', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          nome: produto.altText,
-          descricao: produto.descricao,
-          preco: produto.preco,
-          imagem_url: produto.imageUrl
-        }),
-      });
-
-      if (!response.ok) {
-        const errorText = await response.text(); // Obtém o texto da resposta do erro
-        throw new Error(`Erro na resposta do servidor: ${response.status} - ${errorText}`);
-      }
-
-      const data = await response.json();
-      console.log('Resposta do servidor:', data);
-      setSuccessMessage(produto.id); // Atualiza o estado com o ID do produto adicionado
-    } catch (error) {
-      console.error('Erro ao adicionar ao carrinho:', error);
-    }
+  const adicionarAoCarrinho = (produto) => {
+    setCarrinho((prevCarrinho) => [...prevCarrinho, produto]);
+    setSuccessMessage(produto.id);
   };
-
   // Simulando uma lista de produtos
   const produtos = [
     { id: 1, link: '#', imageUrl: 'catalogo_feminino.png', altText: 'Energia Zen', descricao: 'Descrição do produto', preco: 'R$5,00' },
